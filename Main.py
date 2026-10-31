@@ -4,12 +4,7 @@ import random
 import Ingreso as ingreso
 
 def menu():
-    print("1. Agregar vendedor")
-    print("2. Agregar ventas a un vendedor")
-    print("3. Modificar vendedor")
-    print("4. Modificar ventas de un vendedor")
-    print("5. Eliminar vendedor")
-    print("6. Eliminar venta de un vendedor")
+    print("1. Agregar vendedor\n2. Agregar ventas a un vendedor\n3. Modificar vendedor\n4. Modificar ventas de un vendedor\n5. Eliminar vendedor\n6. Eliminar venta de un vendedor")
     opcion = input("Ingrese una opción: ")
     while opcion not in ['1', '2', '3', '4', '5', '6']:
         opcion = input("Opción inválida. Ingrese una opción válida: ")

@@ -1,6 +1,4 @@
 import json
-import re
-import random
 
 def ingresar_sueldo():
     sueldo = float(input("Ingrese el sueldo del vendedor: "))
@@ -34,4 +32,3 @@ def ingresar_legajo():
             dic[legajo]["ventas"] = ingresar_ventas()
         legajo = int(input("Ingrese el legajo de otro vendedor, ingrese -1 para finalizar: "))
     return dic
-
