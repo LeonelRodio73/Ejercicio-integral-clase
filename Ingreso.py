@@ -31,19 +31,16 @@ def ingresar_ventas():
         mes = str(input("Mes de la venta, -1 para finalizar: "))
     return ventas
 
-def ingresar_legajo():
+def guardar_archivo(diccionario):
+    '''Guarda un diccionario en un archivo JSON.'''
+    with open("Ventas.json", "w", encoding="utf-8") as f:
+        json.dump(diccionario, f, ensure_ascii=False, indent=4)
+
+def ingresar_legajo(legajo):
     '''Ingresa el legajo del vendedor, el sueldo y la cantidad de ventas del mismo.'''
     dic = {}
-    legajo = int(input("Ingrese el legajo del vendedor, ingrese -1 para finalizar: "))
-    while legajo != -1:
-        if legajo < 0:
-            print("El legajo no puede ser negativo")
-            legajo = int(input("Ingrese el legajo del vendedor, ingrese -1 para finalizar: "))
-        elif legajo in dic:
-            print("El legajo que ingreso ya existe")
-        else:
-            dic[legajo] = {}
-            dic[legajo]["sueldo"] = ingresar_sueldo()
-            dic[legajo]["ventas"] = ingresar_ventas()
-        legajo = int(input("Ingrese el legajo de otro vendedor, ingrese -1 para finalizar: "))
+    dic[legajo] = {}
+    dic[legajo]["sueldo"] = ingresar_sueldo()
+    dic[legajo]["ventas"] = ingresar_ventas()
+    guardar_archivo(dic)
     return dic
